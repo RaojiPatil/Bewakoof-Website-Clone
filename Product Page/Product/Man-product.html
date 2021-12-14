@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+
+<body>
+
+
+<div id="Man_product"></div>
+
+
+
+</body>
+
+</html>
+
+
+<script>
+
+async function showproduct() {
+  let res = await fetch(`http://localhost:5600/api/products/`)
+
+  let data = await res.json();
+  showdata(data.Man);
+  console.log(data.Man);
+
+}
+showproduct();
+
+
+   
+var container = document.getElementById("Man_product");
+
+function showdata(movie) {
+  container.innerHTML = null;
+ try {
+          movie.forEach(function(product) {
+          let div = document.createElement('div')
+
+          let img = document.createElement('img')
+          img.src = product.img
+
+          let Name = document.createElement('p')
+          Name.innerText = product.Name
+
+
+          let price = document.createElement('p')
+          price.innerText = "Year :" + product.price
+
+          let membership = document.createElement('p')
+          membership.innerText = "imdbID :" + product.membership
+
+
+          div.append(img, Name, price, membership);
+          container.append(div);
+
+            })
+       } catch (e) {
+         console.log("Error:- this Product not be available");
+    }
+ }
+
+
+
+
+
+</script>

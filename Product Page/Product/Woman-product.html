@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+
+<body>
+
+
+<div id="Man_product"></div>
+
+
+
+</body>
+
+</html>
+
+
+<script>
+
+async function showproduct() {
+  let res = await fetch(`http://localhost:5600/api/products/`)
+
+  let data = await res.json();
+  console.log(data.WoMan);
+
+}
+showproduct();
+
+
+
+
+
+
+
+</script>
