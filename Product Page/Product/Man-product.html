@@ -8,13 +8,123 @@
     <title>Document</title>
 </head>
 <style>
+  #Maindiv_product{
+    display: grid;
+    grid-template-columns: 30% 60%;
+  }#filter_manproduct{
+    margin-top: 50px;
+    margin-left: 140px;
+  }#filter_manproduct1{
+    padding-left: 40px;
+
+
+  }
+  
+  
+  
+  
+  #Man_product>div{
+    margin: 10px;
+  } #Man_product>div>p{
+    color: rgb(45,45,58);
+   margin: 3px;
+  }
+  #Man_product{
+    margin-top: 180px;
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    margin-left: 25px;
+    
+  }#Man_product>div>img{
+    width: 85%;
+  }#color{
+    display: grid;
+    grid-template-columns: 25px 25px 25px 25px 25px;
+    gap: 10px;
+    width: 100%;
+    height: 20px;
+  }#color>button{
+    width: 25px;
+    height: 25px;
+
+  }#a1{
+   background-color: blue;
+  }#a2{
+   background-color: rgb(247, 65, 20);
+  }#a3{
+   background-color: rgb(17, 252, 17);
+  }#a4{
+   background-color: rgb(240, 22, 113);
+  }#a5{
+   background-color: rgb(15, 15, 15);
+  }#a6{
+   background-color: rgb(255, 255, 255);
+  }#a7{
+   background-color: rgb(201, 255, 4);
+  }#a8{
+   background-color: wheat;
+  }#a9{
+   background-color: rgb(0, 238, 255);
+  }#a10{
+   background-color: rgb(250, 6, 197);
+  }#Size_s{
+    background-color: white;
+    border: 1px solid rgb(223, 217, 217);
+  }
     
 </style>
 
 <body>
+  <div id="Maindiv_product">
+
+ 
+   <div id="filter_manproduct">
+      <h1>Man's Product</h1>
+
+      <div id="filter_manproduct1">
+        <h4>Filter</h4>
+        <p>Category</p>
+         <Button>Price Low to High</Button>
+        <Button>Price High to Low</Button>
+
+        <div>
+          <h4>Size</h4>
+
+         <button id="Size_s"><p>S</p></button>
+         <button id="Size_s"><p>L</p></button>
+         <button id="Size_s"><p>M</p></button>
+         <button id="Size_s"><p>XL</p></button>
+         <button id="Size_s"><p>2XL</p></button>
+         <button id="Size_s"><p>3XL</p></button>
+         <button id="Size_s"><p>XS</p></button>
+
+        </div>
+        <br>
+        <h4>Color</h4>
+        <div id="color">
+        <button id="a1"></button>
+        <button id="a2"></button>
+        <button id="a3"></button>
+        <button id="a4"></button>
+        <button id="a5"></button>
+        <button id="a6"></button>
+        <button id="a7"></button>
+        <button id="a8"></button>
+        <button id="a9"></button>
+        <button id="a10"></button>
+        <button id="a4"></button>
+        </div>
 
 
-<div id="Man_product"></div>
+      </div>
+
+     
+  
+    </div>
+    <div>
+     <div id="Man_product"></div>
+    </div>
+  </div>
 
 
 
@@ -26,7 +136,7 @@
 <script>
 
 async function showproduct() {
-  let res = await fetch(`http://localhost:5600/api/products/`)
+  let res = await fetch(`http://localhost:5800/api/products/`)
 
   let data = await res.json();
   showdata(data.Man);
@@ -39,10 +149,10 @@ showproduct();
    
 var container = document.getElementById("Man_product");
 
-function showdata(movie) {
+function showdata(products) {
   container.innerHTML = null;
  try {
-          movie.forEach(function(product) {
+  products.forEach(function(product) {
           let div = document.createElement('div')
 
           let img = document.createElement('img')
@@ -53,13 +163,20 @@ function showdata(movie) {
 
 
           let price = document.createElement('p')
-          price.innerText = "Year :" + product.price
+          price.innerText = "₹" +product.price
 
           let membership = document.createElement('p')
-          membership.innerText = "imdbID :" + product.membership
+          membership.innerText = "₹"+product.membership
+
+          let btn = document.createElement('button')
+            btn.innerText = "Add to Cart";
+
+            btn.onclick = function() {
+                addtoCart(product);
+            };
 
 
-          div.append(img, Name, price, membership);
+          div.append(img, Name, price, membership, btn);
           container.append(div);
 
             })
@@ -69,6 +186,18 @@ function showdata(movie) {
  }
 
 
+ if (localStorage.getItem("cart") == null) {
+        localStorage.setItem("cart", JSON.stringify([]));
+    }
+
+    function addtoCart(p) {
+        let products_cart = JSON.parse(localStorage.getItem('cart'));
+
+        products_cart.push(p);
+
+        localStorage.setItem("cart", JSON.stringify(products_cart));
+
+    }
 
 
 

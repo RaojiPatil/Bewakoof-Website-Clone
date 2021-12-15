@@ -26,10 +26,10 @@
 <script>
 
 async function showproduct() {
-  let res = await fetch(`http://localhost:5600/api/products/`)
+  let res = await fetch(`http://localhost:5800/api/products/`)
 
   let data = await res.json();
-  console.log(data.WoMan);
+  console.log(data.Woman);
 
 }
 showproduct();

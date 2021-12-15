@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Healthmug</title>
+  <meta name="theme-color" content="#51c9a6">
+	<meta name="msapplication-navbutton-color" content="#51c9a6">
+	<meta name="application-name" content="Healthmug LT">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="Healthmug LT">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="stylesheet" href="https://static.oxinis.com/healthmug/css/healthmug-combined-6a75d3cd87.min.css" />
+    
+<style>
+.checkoutTopIconWrap{
+    margin-left: 25%;
+}
+.checkOut {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 50%;
+  height:100%;
+  margin-left: 18%;
+  
+  border: 1px solid #888888;
+  background-color: #FFFFFF;
+  box-shadow: 2px 2px 2px 2px #888888;
+  opacity: 0.8;
+    
+    
+}
+.stepTitle{
+    position: relative;
+    background-color: #fb8903;
+    margin: 0 -7px;
+    margin-top: 2%;
+    box-shadow: 0 -2px 8px 0 rgb(156 154 154 / 40%);
+}
+.head{
+    color: #FEFFFF;
+    font-weight: 500;
+    font-size: 20px;
+    margin: auto;
+    
+   
+}
+.form_1 {
+  width: 70%;
+  height: 10%;
+  border: none;
+  display:grid;
+  grid-gap: 5%;
+  margin: auto;
+  margin-top: 1%;
+  outline: none;
+}
+.paymentBox{
+  border: 1px solid rgb(238, 236, 236);
+  padding-left: 20px;
+  width: 90%;
+  height: 400px;
+  margin: 1% 1%;
+
+}
+
+line{
+  display:inline-block;
+}
+.form_1 {
+  width: 80%;
+  height: 30%;
+  border: none;
+  display:grid;
+  grid-gap: 5%;
+  margin:0;
+  margin-top: 1%;
+  outline: none;
+  
+}
+input {
+  height: 30px;
+  outline: 0;
+  border-radius: 0;
+  border: 1px solid #b7b7b7;
+  transition: .2s;
+}
+.cont {
+  width: 100%;
+  height: 40px;
+  background-color: #51C9A6;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  margin-top: 3%;
+  display: inline-block;
+  
+}
+.textfor{
+  font-size: 20px;
+  color: #fff;
+}
+.option{
+  display: inline-block;
+}
+.cont_promo {
+  width: 7%;
+  height: 30px;
+  background-color: #51C9A6;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  margin-top: 3%;
+  display: inline-block;
+  
+}#paymentbox1>p{
+  background-color: rgb(241, 238, 238);
+ color: black;
+ font-size: 16px;
+ padding-left: 20px;
+ padding-top: 10px;
+ border: 1px  solid black;
+ margin-left: 20px;
+ margin-right: 20px;
+ 
+ height: 40px;
+
+}#paymentbox1{
+  margin-top: 25px;
+  width: 80%;
+  background-color: rgb(241, 238, 238);
+}#paymentoption1{
+margin-left: 18%;
+  margin-top: 4%;
+font-size: 20px;
+}#nav{
+  height: 60px;
+  border-bottom: 1px solid slategray;
+}#logo{
+  margin-left: 15%;
+  margin-top: 25px;
+  width: 10%;
+}
+  </style>
+</head>
+<body>
+  <div id="nav">
+<img id="logo" src="https://images.bewakoof.com/web/bewakoof-primary-logo-white-bg-2x-1635745564.png" alt="">
+  </div>
+  <h2 id="paymentoption1">Payment Option</h2>
+<div class="checkOut">
+ 
+      <div id="paymentbox1">
+       
+       <p id="paymentbox2">DEBIT/CREAT CART</p>
+       <p>WALLET</p>
+       <p>UPI</p>
+       <p>NET BANKING</p>
+       <p>CASH ON DELIVERY</p>
+     </div>
+   
+     <div class="paymentBox">
+      <p style="font-size: 20px;color: #40424c;" >Accepted Cards</p>
+      <img style="width: 50%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ12vBiuu4-5dVskmyF3PW7IfOJ6ZBC6s5dfA&usqp=CAU"/>
+
+      <form class="form_1" >
+        <p>Name on the Card</p><input class="a" type="text" placeholder="Name on the Card"/>
+        <p>Card Number</p><input class="a" type="number" placeholder="xxxx-xxxx-xxxx-xxxx" />
+        <p>CVV</p><input style="width: 20%;" type="password" placeholder="***"/>
+        
+
+        <div class="option">
+          <div class="option">
+            <label  >Expiry Month/Year</label> 
+            <select style="height: 20px;width: 60px;">
+            <option value="Select">Select</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="Septeber">Septeber</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+            </select>
+          </div>
+    
+          <div class="option">
+            <label></label> 
+            <select style="height: 20px;width: 50px;">
+            <option value="Select">Select</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            </select>
+          </div>
+
+        </div>
+      
+        <button type="submit" class="cont"><a href="popup.html"  class="textfor">Pay ><span></span></a></button>
+    </form>
+    
+
+    
+    </div>
+
+</div>  
+
+ 
+
+ 
+   
+
+
+</body>
+</html>
+<script>
+  let parent = document.getElementById('medicine');
+ 
+ let cart = JSON.parse(localStorage.getItem("cart"))
+
+ console.log(cart);
+
+ function showProducts() {
+
+ cart.forEach(function (product){
+
+  let div = document.createElement("div");
+
+  let img = document.createElement("img");
+  
+  
+
+  img.src = product.img;
+
+
+  let product_prize = document.createElement("p");
+
+  product_prize.textContent = product.price;
+  product_prize.style.fontSize="20px"
+  product_prize.style.textAlign="center"
+
+
+  let product_name = document.createElement("p")
+
+  product_name.textContent = product.name;
+  product_name.style.fontSize="15px"
+  product_name.style.textAlign="center"
+
+  let addtocart_btn = document.createElement("button");
+
+  addtocart_btn.innerText = "Add to cart";
+
+  addtocart_btn.onclick = function () {
+      addtoCart(product);  
+  };
+
+  
+
+  parent.append(div);
+
+ });
+
+ var num = document.createElement("h1");
+  num.textContent = cart.length;
+
+  let added  = document.getElementById("add");
+  added.append(num);
+
+  let pr = document.getElementById("pr");
+
+  var total = 0;
+  let total_pr =JSON.parse(localStorage.getItem("cart"));
+
+  total_pr.forEach(function(total_pr){
+      total=total + +total_pr.price;
+  });
+  add_qunt.append(total);
+  console.log(total);
+  }
+
+    
+
+  function check(e) {
+    e.preventDefault();
+    let inp = document.getElementById("input");
+
+    let code = inp.promo.value;
+
+    let mon = document.getElementById("add_qunt");
+
+    if(code==="masai30"){
+        mon.textContent=Math.floor(mon.textContent * 0.7);
+    } else {
+        alert("Please Enter Valid Promo Code")
+    }
+    let pro = document.getElementById("promo");
+    inp.promo.value="";
+  }
+
+
+
+showProducts();
+</script>

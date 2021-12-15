@@ -51,16 +51,16 @@
             "img": "https://images.bewakoof.com/t320/olive-camo-street-wear-t-shirt-425022-1635929495-1.jpg"
         },
         {
-          "Name": "Olive Panda CamoHalf T-Shirt",
+          "Name": "Men's color blooooc joggers",
           "price": "499",
           "membership": "269 for Tribe Member",
-            "img": "https://www.bewakoof.com/p/iron-man-of-war-half-sleeve-t-shirt-for-men"
+            "img": "https://images.bewakoof.com/t320/campus-sutra-men-blue-solid-slim-fit-jeans-452049-1637595107-1.JPG"
         },
         {
           "Name": "Work Hard Box Half T-Shirt",
           "price": "499",
           "membership": "269 for Tribe Member",
-            "img": "https://images.bewakoof.com/t320/conquer-strip-half-sleeve-t-shirt-black-300965-1637855112-1.jpg"
+          "img": "https://images.bewakoof.com/t320/campus-sutra-men-blue-solid-slim-fit-jeans-452047-1637594756-1.JPG"
         },
 
         {
@@ -122,10 +122,15 @@
       "price": "1499",
       "membership": "269 for Tribe Member",
         "img": "https://images.bewakoof.com/t320/fugazee-men-s-desert-camo-military-tactical-cargo-slim-fit-denim-jeans-455165-1638963996-1.jpg"
+    },{
+      "Name": "White Round Half Sleeve T-Shirt",
+      "price": "299",
+      "membership": "249 for Tribe Member",
+        "img": "https://images.bewakoof.com/t320/navy-blue-half-sleeve-t-shirt-115-1639137544-1.jpg"
     }
   ],
 
-    "WoMan": [{
+    "Woman": [{
               "Name": "Jet Black Half Sleeve T-Shirt",
               "price": "399",
               "membership": "269 for Tribe Member",
