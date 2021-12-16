@@ -8,6 +8,43 @@
     <title>Document</title>
 </head>
 <style>
+   .navbar{
+          width: 100%;
+          height: 60px;
+         border-bottom: 1px solid rgb(44, 43, 43);
+          display: grid;
+          grid-template-columns: 25% 30% 25% 15%;
+        }#signup{
+         margin-top: 20px;
+         color: black;
+         font-size: 20px;
+        }#cart1{
+            width: 5%;
+            margin-left: 20px;
+        }
+        #logo{
+            margin-left: 2%;
+            
+
+        }
+        #logo_web{
+          
+            margin-top: 6.5%;
+            margin-left: 50%;
+            width: 40%;
+        }
+        #category{
+            margin-top: 20px;
+            display: flex;
+            gap: 30px;
+
+        }
+        #input{
+            margin-top: 20px;
+            margin-left: 40px;
+        }#man1{
+          color: black;
+        }
   #Maindiv_product{
     display: grid;
     grid-template-columns: 30% 60%;
@@ -16,8 +53,8 @@
     margin-left: 140px;
   }#filter_manproduct1{
     padding-left: 40px;
-
-
+  }#m1{
+    margin-left: 35px;
   }
   
   
@@ -75,17 +112,48 @@
 </style>
 
 <body>
+
+  <div class="navbar">
+
+    <div id="logo">
+        <a href="/index.html"><img id="logo_web" src="https://images.bewakoof.com/web/bewakoof-primary-logo-white-bg-2x-1635745564.png" alt="" ></a>
+    </div>
+
+   <div id="category">
+    <div >
+    <a id="man1" href="/index.html"> MAN</a>
+    </div>
+    <div>
+    <a id="man1" href="/women.html">WOMAN</a> 
+    </div>
+    <div>
+    <a id="man1" href="/accessories.html"> MOBILE COVERS</a> 
+    </div>
+   </div>
+
+    <div id="input">
+        <input type="text" id="inputbox" placeholder="Search by Product Category" />
+        <button id="button_inputbox">Search</button>
+    </div>
+
+    <div id="signup">
+    <a id="man1" href="/Login.html">Login</a>
+     <a href="/Cart/cart.html"><img id="cart1" src="https://images.bewakoof.com/web/bag-filled-1635763396.png" class="bag_filled"></a>
+    </div>
+</div>
+
+
   <div id="Maindiv_product">
 
  
    <div id="filter_manproduct">
-      <h1>Man's Product</h1>
+      <h1 id="m1">Man's Product</h1>
 
       <div id="filter_manproduct1">
         <h4>Filter</h4>
         <p>Category</p>
-         <Button>Price Low to High</Button>
-        <Button>Price High to Low</Button>
+         <Button onclick="sortLH()">Price Low to High</Button>
+        <Button onclick="sortHL()">Price High to Low</Button>
 
         <div>
           <h4>Size</h4>
@@ -149,10 +217,10 @@ showproduct();
    
 var container = document.getElementById("Man_product");
 
-function showdata(products) {
+function showdata(product) {
   container.innerHTML = null;
  try {
-  products.forEach(function(product) {
+  product.forEach(function(product) {
           let div = document.createElement('div')
 
           let img = document.createElement('img')
@@ -187,18 +255,56 @@ function showdata(products) {
 
 
  if (localStorage.getItem("cart") == null) {
-        localStorage.setItem("cart", JSON.stringify([]));
-    }
-
-    function addtoCart(p) {
-        let products_cart = JSON.parse(localStorage.getItem('cart'));
-
-        products_cart.push(p);
-
-        localStorage.setItem("cart", JSON.stringify(products_cart));
-
-    }
+     localStorage.setItem("cart", JSON.stringify([]));
+  }
 
 
 
+
+function addtoCart(p) {
+let products_cart = JSON.parse(localStorage.getItem('cart'));
+products_cart.push(p);
+localStorage.setItem("cart", JSON.stringify(products_cart));
+}
+
+
+
+function sortLH () {
+  
+  let arr = data.Woman.sort(function (a,b){
+    return a.price - b.price
+
+  });
+  showdata(arr);
+}
+
+
+ function sortHL () {
+  
+  let arr = data.Woman.sort(function (a,b){
+    return b.price - a.price
+
+  });
+  showdata(arr);
+}
+
+
+// let ninty = [];
+// let onetwonty = [];
+
+// async function sortLH() {
+//     let data = await fetch("http://localhost:5900/api/products/");
+
+//     data = await data.json();
+
+//     let products = data[Woman];
+
+//     products.forEach((e) => {
+//         if (e.price == 399) {
+//             ninty.push(e);
+//         }
+//     });
+
+//     showdata(ninty);
+// }
 </script>

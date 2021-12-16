@@ -28,7 +28,7 @@
             color: rgb(51,51,51); 
             margin-top: 200px;
         }
-        #sign_part2_input{
+        #mobile{
             text-align: center;
             font-size: 20px;
             width: 60%;
@@ -68,6 +68,16 @@
           width: 50%;
           text-align: center;
           margin-left: 25%;
+        }#name{
+            text-align: center;
+            font-size: 20px;
+            width: 60%;
+            height: 40px;
+        }#password{
+            text-align: center;
+            font-size: 20px;
+            width: 60%;
+            height: 40px;
         }
     </style>
 </head>
@@ -80,25 +90,23 @@
 
 
         <div id="signin_2">
-            <h3 id="signup_part2">Log in/Sign up</h3>
+            <h3 id="signup_part2">Sign In</h3>
             <h4 id="signup_p">For Latest trends, exciting offers and everything Bewakoof!</h4>
 
             <div>
-                <input id="sign_part2_input" type="text" placeholder="Enter Mobile Number">
-                <button id="sign_part2_button">Countiniue</button>
+               
+                <form onsubmit="signin(event)" id="myform" action="">
+
+                    <input id="mobile" type="text" placeholder="Enter Mobile Number"><br><br>
+                    <input type="text" id="password" placeholder="Password" /><br><br>
+                    <input id="sign_part2_button" type="submit" id="b" /><br>
+        
+                </form>
             </div>
 
             <div>
             <span><hr id="hr"> OR <hr id="hr"> </span>
              
-            </div>
-
-            <div>
-                <input id="sign_part2_input1" type="text" placeholder="Countinive With Email"><br>
-             
-                <input  id="sign_part2_input2" type="text" placeholder="Google">
-                <input id="sign_part2_input2" type="text" placeholder="Facebook">
-
             </div>
             <div id="signup_bottom">
                 <p>By creating an account or logging in, you agree with Bewakoofs
@@ -110,3 +118,33 @@
    
 </body>
 </html>
+
+
+
+
+<script>
+    function signin(e) {
+
+        e.preventDefault();
+        let myform = document.getElementById("myform");
+        let mobile = myform.mobile.value;
+        let password = myform.password.value;
+
+        let all_users = JSON.parse(localStorage.getItem("users"));
+
+
+        all_users.forEach(function(user) {
+            if (mobile === user.mobile && password === user.password) {
+
+    //          window.location = "C:\Users\Ash\Desktop\Bewakoof-Website-Clone\index.html";
+                alert("logged in successfully");
+            
+            window.location = "C:\Users\Ash\Desktop\Bewakoof-Website-Clone\index.html";    
+
+            } else {
+                alert("invalid Credentials");
+
+            }
+        });
+    }
+</script>

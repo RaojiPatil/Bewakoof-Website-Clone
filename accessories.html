@@ -13,7 +13,14 @@
           height: 60px;
          border-bottom: 1px solid rgb(44, 43, 43);
           display: grid;
-          grid-template-columns: 25% 35% 35%;
+          grid-template-columns: 25% 30% 25% 15%;
+        }#signup{
+         margin-top: 20px;
+         color: black;
+         font-size: 20px;
+        }#cart1{
+            width: 5%;
+            margin-left: 20px;
         }
         #logo{
             margin-left: 2%;
@@ -31,6 +38,14 @@
             display: flex;
             gap: 30px;
 
+        }#inputbox{
+            width: 70%;
+            height: 25px;
+            color: black;
+            font-size: 16px;
+        }#button_inputbox{
+            width: 20%;
+            height: 30px;
         }
         #input{
             margin-top: 20px;
@@ -210,6 +225,9 @@
         margin: 5%;
         color: white;
         padding-bottom: 5%;
+       } #man1{
+           color: black;
+           text-underline-offset: none;
        }
 
 
@@ -226,29 +244,36 @@
 <body>
     <div class="navbar">
         <div id="logo">
-           <img id="logo_web" src="https://images.bewakoof.com/web/bewakoof-primary-logo-white-bg-2x-1635745564.png" alt="" >
+            <a href="/index.html"><img id="logo_web" src="https://images.bewakoof.com/web/bewakoof-primary-logo-white-bg-2x-1635745564.png" alt="" ></a>
         </div>
        <div id="category">
-        <div>
-         MAN
+        <div >
+        <a id="man1" href="index.html"> MAN</a>
         </div>
         <div>
-         WOMAN
+        <a id="man1" href="women.html">WOMAN</a> 
         </div>
         <div>
-        MOBILE COVERS
+      <a id="man1" href="accessories.html"> MOBILE COVERS</a> 
         </div>
      </div>
 
         <div id="input">
-            <input type="text" placeholder="Search by Product Category"> <i class="icon_search"></i>
+            <input type="text" id="inputbox" placeholder="Search by Product Category" />
+            <button id="button_inputbox">Search</button>
         </div>
+
+    <div id="signup">
+        <a id="man1" href="/Login/Signup.html">Login</a>
+         <a href="Cart/cart.html"><img id="cart1" src="https://images.bewakoof.com/web/bag-filled-1635763396.png" class="bag_filled"></a>
+        </div>
+        
     </div>
 
     <div class="top" >
-       <a href="index.html"><div id="top1">MAN</div></a>
-        <a href="women.html"><div id="top1">WOMAN</div></a>
-       <a href="accessories.html"><div id="top1">ACCESSORIES</div></a> 
+       <a id="man1" href="index.html"><div id="top1">MAN</div></a>
+        <a id="man1" href="women.html"><div id="top1">WOMAN</div></a>
+       <a id="man1" href="accessories.html"><div id="top1">ACCESSORIES</div></a> 
        
     </div>
   

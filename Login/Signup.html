@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+        #signin_page{
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }#signin_1{
+            text-align: center;
+            background-color: #FFFAE7;
+            width: 100%;
+            height: 1000px;
+        }#signin_2{
+            text-align: center;
+            color: rgb(165,160,160); 
+        }#headind_sign{
+            width: 100%;
+            height: 500px;
+        }
+        #sign_img{
+         width: 90%;
+        }#signup_part2{
+            font-size: 20px;
+            color: rgb(51,51,51); 
+            margin-top: 200px;
+        }
+        #mobile{
+            text-align: center;
+            font-size: 20px;
+            width: 60%;
+            height: 40px;
+        }#sign_part2_button{
+            margin-top: 10px;
+            width: 60%;
+            height: 40px;
+            border: none;
+             border-radius: 5px;
+            outline: none;
+            letter-spacing: .5px;
+           background-color: #42a2a2;
+           font-size: 16px;
+           font-family: montserrat,sans-serif;
+           color: #fff;
+           text-transform: uppercase;
+        }#hr{
+            width: 30%;
+            display: inline-block;
+            margin-top: 45px;
+            text-align: center;
+        }#sign_part2_input1{
+            width: 60%;
+            height: 40px;
+            margin-top: 25px;
+            border-radius: 4px;
+            text-align: center;
+        }#sign_part2_input2{
+            width: 30%;
+            border-radius: 4px;
+            height: 40px;
+            margin-top: 25px;
+            text-align: center;
+        }#signup_bottom{
+            margin-top: 15px;
+          width: 50%;
+          text-align: center;
+          margin-left: 25%;
+        }#name{
+            text-align: center;
+            font-size: 20px;
+            width: 60%;
+            height: 40px;
+        }#password{
+            text-align: center;
+            font-size: 20px;
+            width: 60%;
+            height: 40px;
+        }#sign_part2_button1{
+            margin-top: 10px;
+            padding-top: 10px;
+            margin-left: 20%;
+            width: 60%;
+            height: 33px;
+            border: none;
+             border-radius: 5px;
+            outline: none;
+            letter-spacing: .5px;
+           background-color: #42a2a2;
+           font-size: 16px;
+           font-family: montserrat,sans-serif;
+           color: #fff;
+           text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div id="signin_page">
+        <div id="signin_1">
+            <h1 id="headind_sign">Welcome to the world of Bewakoof!</h1>
+            <img id="sign_img" src="https://images.bewakoof.com/web/group-19-1617704502.png" alt="">
+        </div>
+
+
+        <div id="signin_2">
+            <h3 id="signup_part2">Sign up</h3>
+            <h4 id="signup_p">For Latest trends, exciting offers and everything Bewakoof!</h4>
+
+            <div>
+               
+                <form onsubmit="signup(event)" id="myform" action="">
+
+                    <input type="text" id="name" placeholder="Name" /><br><br>
+                    <input id="mobile" type="text" placeholder="Enter Mobile Number"><br><br>
+        
+                    <input type="text" id="password" placeholder="Password" /><br><br>
+                    <input id="sign_part2_button" type="submit" id="b"  /><br>
+                  <div>    <a href="/Login/Login.html">
+                        <p id="sign_part2_button1">Go TO Login</p></a>
+                      </div>
+            
+ 
+                </form>
+            </div>
+
+            <div>
+            <span><hr id="hr"> OR <hr id="hr"> </span>
+             
+            </div>
+
+            <div>
+                <input id="sign_part2_input1" type="text" placeholder="Countinive With Email"><br>
+             
+                <input  id="sign_part2_input2" type="text" placeholder="Google">
+                <input id="sign_part2_input2" type="text" placeholder="Facebook">
+
+            </div>
+            <div id="signup_bottom">
+                <p>By creating an account or logging in, you agree with Bewakoofs
+                     <b>Terms and Conditions</b>and Privacy Policy.</p>
+            </div>
+        </div>
+
+    </div>
+   
+</body>
+</html>
+
+
+
+<script>
+    function signup(e) {
+
+        e.preventDefault();
+
+        let myform = document.getElementById("myform");
+
+        let name = myform.name.value;
+        let mobile = myform.mobile.value;
+        let password = myform.password.value;
+
+        if (localStorage.getItem("users") === null) {
+            localStorage.setItem("users", JSON.stringify([]));
+        }
+
+
+        let user = {
+            name,
+            mobile,
+            password,
+        };
+
+
+
+        let arr = JSON.parse(localStorage.getItem("users"));
+        arr.push(user);
+        localStorage.setItem("users", JSON.stringify(arr));
+
+    }
+</script>
