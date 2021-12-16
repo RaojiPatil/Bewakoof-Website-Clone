@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bewakoof Web Clone</title>
-  
+    <link rel="shortcut icon" type="image/x-icon" href="https://images.bewakoof.com/web/favicon-1635856217.png" hreflang="en-in">
 
     <style>
         .navbar{
@@ -13,18 +13,29 @@
           height: 60px;
          border-bottom: 1px solid rgb(44, 43, 43);
           display: grid;
-          grid-template-columns: 25% 30% 20% 23%;
+          grid-template-columns: 25% 30% 25% 15%;
         }
         #logo{
             margin-left: 2%;
             
 
+        }#cart1{
+            width: 5%;
+            margin-left: 20px;
         }
         #logo_web{
           
             margin-top: 6.5%;
             margin-left: 50%;
             width: 40%;
+        }#inputbox{
+            width: 70%;
+            height: 30px;
+            color: black;
+            font-size: 16px;
+        }#button_inputbox{
+            width: 20%;
+            height: 35px;
         }
         #category{
             margin-top: 20px;
@@ -33,11 +44,13 @@
 
         }
         #input{
-            margin-top: 20px;
-            margin-left: 40px;
+            margin-top: 10px;
+      
         }
         #signup{
          margin-top: 20px;
+         color: black;
+         font-size: 20px;
         }
        .top{
        text-align: center;
@@ -240,11 +253,13 @@
      </div>
 
         <div id="input">
-            <input type="text" placeholder="Search by Product Category"> <i class="icon_search"></i>
-            
+            <input type="text" id="inputbox" placeholder="Search by Product Category" />
+            <button id="button_inputbox">Search</button>
         </div>
 
-        <div id="signup">Login</div>
+        <div id="signup"><a href="Login.html">Login</a>
+            <a href="Cart/cart.html"><img id="cart1" src="https://images.bewakoof.com/web/bag-filled-1635763396.png" class="bag_filled"></a>
+        </div>
         
     </div>
 
