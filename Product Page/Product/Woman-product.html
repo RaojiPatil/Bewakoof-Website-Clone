@@ -6,110 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="womanproduct.css">
 </head>
-<style>
-   .navbar{
-          width: 100%;
-          height: 60px;
-         border-bottom: 1px solid rgb(44, 43, 43);
-          display: grid;
-          grid-template-columns: 25% 30% 25% 15%;
-        }#signup{
-         margin-top: 20px;
-         color: black;
-         font-size: 20px;
-        }#cart1{
-            width: 5%;
-            margin-left: 20px;
-        }
-        #logo{
-            margin-left: 2%;
-            
 
-        }
-        #logo_web{
-          
-            margin-top: 6.5%;
-            margin-left: 50%;
-            width: 40%;
-        }
-        #category{
-            margin-top: 20px;
-            display: flex;
-            gap: 30px;
-
-        }
-        #input{
-            margin-top: 20px;
-            margin-left: 40px;
-        }#man1{
-          color: black;
-        }
-  #Maindiv_product{
-    display: grid;
-    grid-template-columns: 30% 60%;
-  }#filter_manproduct{
-    margin-top: 50px;
-    margin-left: 140px;
-  }#filter_manproduct1{
-    padding-left: 40px;
-  }#m1{
-    margin-left: 35px;
-  }
-  
-  
-  
-  
-  #Man_product>div{
-    margin: 10px;
-  } #Man_product>div>p{
-    color: rgb(45,45,58);
-   margin: 3px;
-  }
-  #Man_product{
-    margin-top: 180px;
-    display: grid;
-    grid-template-columns: 32% 32% 32%;
-    margin-left: 25px;
-    
-  }#Man_product>div>img{
-    width: 85%;
-  }#color{
-    display: grid;
-    grid-template-columns: 25px 25px 25px 25px 25px;
-    gap: 10px;
-    width: 100%;
-    height: 20px;
-  }#color>button{
-    width: 25px;
-    height: 25px;
-
-  }#a1{
-   background-color: blue;
-  }#a2{
-   background-color: rgb(247, 65, 20);
-  }#a3{
-   background-color: rgb(17, 252, 17);
-  }#a4{
-   background-color: rgb(240, 22, 113);
-  }#a5{
-   background-color: rgb(15, 15, 15);
-  }#a6{
-   background-color: rgb(255, 255, 255);
-  }#a7{
-   background-color: rgb(201, 255, 4);
-  }#a8{
-   background-color: wheat;
-  }#a9{
-   background-color: rgb(0, 238, 255);
-  }#a10{
-   background-color: rgb(250, 6, 197);
-  }#Size_s{
-    background-color: white;
-    border: 1px solid rgb(223, 217, 217);
-  }
-    
-</style>
 
 <body>
 
@@ -137,9 +36,9 @@
     </div>
 
     <div id="signup">
-    <a id="man1" href="/Login.html">Login</a>
-     <a href="/Cart/cart.html"><img id="cart1" src="https://images.bewakoof.com/web/bag-filled-1635763396.png" class="bag_filled"></a>
-    </div>
+    <a id="man1" href="/Login/Signup.html">SignUp</a>
+    <a href="/Cart/cart.html"><img id="cart1" src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/2x/external-cart-supermarket-flatart-icons-lineal-color-flatarticons.png" class="bag_filled"></a>
+  </div>
 </div>
 
 
@@ -147,14 +46,15 @@
 
  
    <div id="filter_manproduct">
-      <h1 id="m1">Man's Product</h1>
-
+      <h1 id="m1">Woman's Product</h1>
+      <hr>
       <div id="filter_manproduct1">
-        <h4>Filter</h4>
-        <p>Category</p>
-         <Button onclick="sortLH()">Price Low to High</Button>
-        <Button onclick="sortHL()">Price High to Low</Button>
-
+        <h4 id="m2">Filter</h4>
+ 
+         <Button id="button1" onclick="sortLH()">Price Low to High</Button>
+        <Button id="button1" onclick="sortHL()">Price High to Low</Button>
+        <br><br>
+        <hr>
         <div>
           <h4>Size</h4>
 
@@ -165,7 +65,8 @@
          <button id="Size_s"><p>2XL</p></button>
          <button id="Size_s"><p>3XL</p></button>
          <button id="Size_s"><p>XS</p></button>
-
+        <br><br>
+         <hr>
         </div>
         <br>
         <h4>Color</h4>
@@ -199,112 +100,4 @@
 </body>
 
 </html>
-
-
-<script>
-
-async function showproduct() {
-  let res = await fetch(`http://localhost:5900/api/products/`)
-
-  let data = await res.json();
-  showdata(data.Woman);
-  console.log(data.Woman);
-
-}
-showproduct();
-
-
-   
-var container = document.getElementById("Man_product");
-
-function showdata(product) {
-  container.innerHTML = null;
- try {
-  product.forEach(function(product) {
-          let div = document.createElement('div')
-
-          let img = document.createElement('img')
-          img.src = product.img
-
-          let Name = document.createElement('p')
-          Name.innerText = product.Name
-
-
-          let price = document.createElement('p')
-          price.innerText = "₹" +product.price
-
-          let membership = document.createElement('p')
-          membership.innerText = "₹"+product.membership
-
-          let btn = document.createElement('button')
-            btn.innerText = "Add to Cart";
-
-            btn.onclick = function() {
-                addtoCart(product);
-            };
-
-
-          div.append(img, Name, price, membership, btn);
-          container.append(div);
-
-            })
-       } catch (e) {
-         console.log("Error:- this Product not be available");
-    }
- }
-
-
- if (localStorage.getItem("cart") == null) {
-     localStorage.setItem("cart", JSON.stringify([]));
-  }
-
-
-
-
-function addtoCart(p) {
-let products_cart = JSON.parse(localStorage.getItem('cart'));
-products_cart.push(p);
-localStorage.setItem("cart", JSON.stringify(products_cart));
-}
-
-
-
-function sortLH () {
-  
-  let arr = data.Woman.sort(function (a,b){
-    return a.price - b.price
-
-  });
-  showdata(arr);
-}
-
-
- function sortHL () {
-  
-  let arr = data.Woman.sort(function (a,b){
-    return b.price - a.price
-
-  });
-  showdata(arr);
-}
-
-
-// let ninty = [];
-// let onetwonty = [];
-
-// async function sortLH() {
-//     let data = await fetch("http://localhost:5900/api/products/");
-
-//     data = await data.json();
-
-//     let products = data[Woman];
-
-//     products.forEach((e) => {
-//         if (e.price == 399) {
-//             ninty.push(e);
-//         }
-//     });
-
-//     showdata(ninty);
-// }
-</script>
+<script src="womanproduct.js"></script>
