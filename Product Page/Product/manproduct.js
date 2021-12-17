@@ -1,6 +1,6 @@
 
 async function showproduct() {
-  let res = await fetch(`http://localhost:6100/api/products/`)
+  let res = await fetch(`http://localhost:6300/api/products/`)
 
   let data = await res.json();
   showdata(data.Man);
